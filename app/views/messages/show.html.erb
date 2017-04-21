@@ -1,6 +1,6 @@
 <h1>id = 
 <%= @message.id %>
- のメッセージ詳細ページ</h1>
+ のタスク詳細ページ</h1>
 
 <p>
 <%= @message.content %>
@@ -8,6 +8,6 @@
 
 <%= link_to '一覧に戻る', messages_path %>
 
-<%= link_to 'このメッセージを編集する', edit_message_path(@message) %>
+<%= link_to 'タスクを編集する', edit_message_path(@message) %>
 
-<%= link_to 'このメッセージを削除する', @message, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to 'このタスクを削除する', @message, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>

@@ -1,3 +1,5 @@
+class MessagesController < ApplicationController
+
 def create
     @message = Message.new(message_params)
 
@@ -14,6 +16,14 @@ def edit
   @message = Message.find(params[:id])
 end
 
+def index
+    @messages = Message.all
+end
+
+def show
+  @message = Message.find(params[:id])
+end
+
 def update
   @message = Message.find(params[:id])
 
@@ -24,6 +34,9 @@ def update
     flash.now[:danger] = 'Message は更新されませんでした'
     render :edit
   end
+end
+def new
+  @message = Message.new
 end
 
 def destroy
@@ -39,4 +52,6 @@ private
 # Strong Parameter
 def message_params
   params.require(:message).permit(:content)
+end
+
 end
