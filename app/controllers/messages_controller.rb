@@ -53,7 +53,7 @@ def set_message
 end
 
 def message_params
-  params.require(:message).permit(:content, :title)
+  params.require(:message).permit(:content, :title, :status)
 end
 
 end
