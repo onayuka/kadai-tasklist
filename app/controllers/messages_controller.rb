@@ -13,7 +13,7 @@ def create
 end
 
 def edit
-  @message = Message.find(params[:id])
+  set_message
 end
 
 def index
@@ -21,11 +21,11 @@ def index
 end
 
 def show
-  @message = Message.find(params[:id])
+  set_message
 end
 
 def update
-  @message = Message.find(params[:id])
+  set_message
 
   if @message.update(message_params)
     flash[:success] = 'Message は正常に更新されました'
@@ -40,7 +40,7 @@ def new
 end
 
 def destroy
-  @message = Message.find(params[:id])
+  set_message
   @message.destroy
 
   flash[:success] = 'Message は正常に削除されました'
@@ -49,7 +49,11 @@ end
 
 private
 
-# Strong Parameter
+def set_message
+  @message = Message.find(params[:id])
+  
+end
+
 def message_params
   params.require(:message).permit(:content)
 end
