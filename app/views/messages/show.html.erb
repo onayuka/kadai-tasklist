@@ -1,8 +1,8 @@
 <h1>id = 
 <%= @message.id %>
- のタスク詳細ページ</h1>
+ の詳細ページ</h1>
 
-<p>タイトル: 
+<p>ステータス: 
 <%= @message.title %>
 </p>
 <p>タスク: 
@@ -10,6 +10,7 @@
 </p>
 
 <%= link_to '一覧に戻る', messages_path %>
+
 
 <%= link_to 'このタスクを編集する', edit_message_path(@message) %>
 
